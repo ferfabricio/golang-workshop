@@ -9,7 +9,7 @@ import (
 
 func main() {
 	mux := http.NewServeMux()
-	mux.HandleFunc("GET /produtos", handlers.NewListTodosHandler())
+	mux.HandleFunc("GET /produtos", handlers.NewListaProdutosHandler())
 
 	fmt.Println("Servidor rodando na porta 8123")
 	err := http.ListenAndServe(":8123", mux)

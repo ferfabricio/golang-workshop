@@ -7,7 +7,7 @@ import (
 	"github.com/ferfabricio/golang-workshop/internal/produtos"
 )
 
-func NewListTodosHandler() http.HandlerFunc {
+func NewListaProdutosHandler() http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		produtos := produtos.CarregarLista()
 
