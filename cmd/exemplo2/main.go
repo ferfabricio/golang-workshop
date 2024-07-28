@@ -11,10 +11,10 @@ type Pedido struct {
 }
 
 type Produto struct {
-	Nome       string   `json:"nome"`
+	Nome       string   `json:"primeiro_nome"`
 	Quantidade int      `json:"quantidade"`
-	Valor      float64  `json:"valor"`
-	Cores      []string `json:"cores,omitempty"`
+	Valor      float64  `json:"-"`
+	Cores      []string `json:"cores"`
 }
 
 // Objetivos:
@@ -39,6 +39,7 @@ func main() {
 		},
 	}
 	data, err := json.MarshalIndent(pedido, "", "  ")
+	// data, err := json.Marshal(pedido)
 	if err != nil {
 		panic(err)
 	}
